@@ -2825,3 +2825,16 @@ selftest.define("update package metadata",
   run.matchErr("You're not in a Meteor package directory");
   run.expectExit(1);
 });
+
+// We have a function that is supposed to delete all packages in tropohouse
+// except the latest release and the current release.
+selftest.define("wipeAllPackages", ['slow'], function () {
+  var s = new Sandbox({
+    warehouse: {
+      version1: { tools: 'tools1' },
+      version2: { tools: 'tools2', latest: true }
+    }
+  });
+
+  // XXX
+});
